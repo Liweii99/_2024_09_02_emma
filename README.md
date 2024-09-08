@@ -16,3 +16,5 @@ https://git-scm.com/downloads
 # MiniConda
 上午10:24
 https://docs.anaconda.com/miniconda/index.html
+# line
+https://apps.microsoft.com/detail/xpfcc4cd725961?hl=zh-tw&gl=TW
