@@ -1,4 +1,4 @@
-while True:
+while True: #0914
     kg=0  #清除變數
     cm=0  #清除變數
     while True:

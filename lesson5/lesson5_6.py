@@ -1,4 +1,4 @@
-def input_data():
+def input_data(): #0914
     while True:
         try:    
             cm = int(input("請輸入身高(公分):"))
