@@ -11,7 +11,6 @@ def input_data(): #0914
         except Exception as e:
             print(f'輸入錯誤{cm}')
             continue
-
     while True:
         try:    
             kg = int(input("請輸入體重(公斤):"))

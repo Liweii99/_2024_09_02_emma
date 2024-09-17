@@ -6,7 +6,6 @@ while True:
         cm = int(input("請輸入身高(公分):"))
         if cm > 300:
                 raise Exception("超過300公分")
-        break
     except ValueError:
         print('輸入格式錯誤')
         continue
@@ -14,12 +13,10 @@ while True:
         print(f'輸入錯誤{cm}')
         continue
 
-while true:
     try:    
         kg = int(input("請輸入體重(公斤):"))
         if kg > 300:
             raise Exception("超過300公分")
-        break
     except ValueError:
         print('輸入格式錯誤')
         continue

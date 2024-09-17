@@ -1,31 +1,27 @@
 while True: #0914
     kg=0  #清除變數
     cm=0  #清除變數
-    while True:
-        try:    
-            cm = int(input("請輸入身高(公分):"))
-            if cm > 300:
-                    raise Exception("超過300公分")
-            break
-        except ValueError:
-            print('輸入格式錯誤')
-            continue
-        except Exception as e:
-            print(f'輸入錯誤{cm}')
-            continue
-
-    while True:
-        try:    
-            kg = int(input("請輸入體重(公斤):"))
-            if kg > 300:
+    try:    
+        cm = int(input("請輸入身高(公分):"))
+        if cm > 300:
                 raise Exception("超過300公分")
-            break
-        except ValueError:
-            print('輸入格式錯誤')
-            continue
-        except Exception as e:
-            print(f'輸入錯誤{kg}')
-            continue
+    except ValueError:
+        print('輸入格式錯誤')
+        continue
+    except Exception as e:
+        print(f'輸入錯誤{cm}')
+        continue
+
+    try:    
+        kg = int(input("請輸入體重(公斤):"))
+        if kg > 300:
+            raise Exception("超過300公分")
+    except ValueError:
+        print('輸入格式錯誤')
+        continue
+    except Exception as e:
+        print(f'輸入錯誤{kg}')
+        continue
 
     print(f'身高={cm},體重={kg}')
     cm=(cm/100)*(cm/100)
@@ -47,4 +43,4 @@ while True: #0914
     play_again = input("還要繼續嗎?(y,n)")
     if play_again == "n":
         break
-print('程式結束')
+print('程式結束')   
