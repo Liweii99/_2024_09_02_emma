@@ -1,4 +1,4 @@
-def input_data()->tuple[int,int]: #0914
+def input_data()->tuple[int,int]: #0914--0918_2
     while True:
         try:    
             cm = int(input("請輸入身高(公分):"))
@@ -53,7 +53,7 @@ while True:
     print(f'身高={cm},體重={kg}')
     BMI = calculate_bmi(cm=cm,kg=kg) #引數名稱的呼叫,可以不依照順序
     print(f'BMI={BMI}')
-    print(get_status(BMI))
+    print(get_status(BMI)) #918_2
     
     play_again = input("還要繼續嗎?(y,n)")
     if play_again == "n":
