@@ -25,15 +25,7 @@ def input_data(): #0914
             continue
     return cm,kg
 
-while True:
-    kg=0  #清除變數
-    cm=0  #清除變數
-    cm,kg = input_data() #呼叫function
-
-    print(f'身高={cm},體重={kg}')
-    cm=(cm/100)*(cm/100)
-    BMI=kg/cm
-    print(f'BMI={BMI}')
+def get_status(bmi): #0918
     if BMI >=35:
         print("重度肥胖：BMI≧35")
     elif BMI >=30:
@@ -46,6 +38,17 @@ while True:
         print("正常範圍")
     else:
         print("體重過輕")
+
+while True:
+    kg=0  #清除變數
+    cm=0  #清除變數
+    cm,kg = input_data() #呼叫function
+
+    print(f'身高={cm},體重={kg}')
+    cm=(cm/100)*(cm/100)
+    BMI=kg/cm
+    print(f'BMI={BMI}')
+    get_status(BMI) #0918 呼喚
     
     play_again = input("還要繼續嗎?(y,n)")
     if play_again == "n":
