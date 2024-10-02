@@ -1,7 +1,9 @@
+#可調整亮度
 from machine import Timer,ADC,Pin,PWM
 
 adc = ADC(4)
 pwm = PWM(Pin(15),freq=50)
+#pwm = PWM(Pin(15))
 conversion_factor = 3.3/(65535)
 
 def do_thing(t):
