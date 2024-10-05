@@ -8,6 +8,7 @@ led->gpio15
 '''
 
 from machine import Timer,ADC,Pin,PWM,RTC
+import tools
 
 
 def do_thing(t):
@@ -36,6 +37,13 @@ def do_thing1(t):
     
 
 def main():
+    try:
+        tools.connect()
+    except RuntimeError as e:
+        print(e)
+    except Exception:
+        print('不知明的錯誤')
+    
     t1 = Timer(period=2000, mode=Timer.PERIODIC, callback=do_thing)
     t2 = Timer(period=500, mode=Timer.PERIODIC, callback=do_thing1)
 
