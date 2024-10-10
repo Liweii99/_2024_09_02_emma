@@ -9,11 +9,12 @@ def green_led_mycallback(t:Timer):
     green_count += 1
     #print(f"目前mycallback被執行:{count}次")
     green_led.toggle()
-    print("green_led初執行")
+   # print("green_led初執行")
     if green_count >= 10:
         t.deinit()
 
 green_led_timer = Timer(period=1000,mode=Timer.PERIODIC,callback=green_led_mycallback)
+
 red_led = Pin(15,Pin.OUT)
 red_count = 0
 def red_led_mycallback(t:Timer):
