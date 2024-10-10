@@ -4,7 +4,7 @@
 #
 # The software is provided "as is", without any warranties or guarantees (explicit or implied).
 # This includes no assurances about being fit for any specific purpose.
-
+# invalid syntax" 意味著 Python 語法錯誤
 import time
 import ssl
 import config, demo
