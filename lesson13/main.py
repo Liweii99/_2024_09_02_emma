@@ -27,7 +27,7 @@ def do_thing(t):
     mqtt.publish('SA-01/TEMPERATURE', f'{temperature}')
     adc_value = adc_light.read_u16()
     print(f'光線:{adc_value}')
-    mqtt.publish('SA-01/LINE_LEVEL', f'{adc_value}')
+    mqtt.publish('SA-37/LINE_LEVEL', f'{adc_value}')
     
     
 def do_thing1(t):
@@ -40,7 +40,7 @@ def do_thing1(t):
     pwm.duty_u16(duty)
     light_level = round(duty/65535*10)
     print(f'可變電阻:{light_level}')
-    mqtt.publish('SA-01/LED_LEVEL', f'{light_level}')
+    mqtt.publish('SA-37/LED_LEVEL', f'{light_level}')
     
 
 def main():
@@ -62,6 +62,7 @@ if __name__ == '__main__':
     else:
         #MQTT
         SERVER = "192.168.0.252"
+        #SERVER = "39.9.162.200"
         CLIENT_ID = binascii.hexlify(machine.unique_id())
         mqtt = MQTTClient(CLIENT_ID, SERVER,user='pi',password='raspberry')
         mqtt.connect()
