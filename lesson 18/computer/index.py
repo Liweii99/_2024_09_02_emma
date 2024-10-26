@@ -1,6 +1,25 @@
+
 import paho.mqtt.client as mqtt
 from datetime import datetime
 import os,csv
+import sqlite3
+from sqlite3 import Error
+
+def insert_to_sqlite(values):
+    try:
+        conn = sqlite3.connect('./data/pico.db')
+    except Exception as e:
+        print(e)
+        return
+    sql = """
+    INSERT INTO 雞舍(時間,設備,值)
+    VALUES(?,?,?)
+    """
+    cursor = conn.cursor()
+    cursor.execute(sql,values)
+    conn.commit()
+    cursor.close()
+    conn.close()
 
 def record(topic:str,value:int | float | str):
     '''
@@ -30,6 +49,7 @@ def record(topic:str,value:int | float | str):
     with open(full_path, mode='a', newline='', encoding='utf-8') as file:
         writer = csv.writer(file)
         writer.writerow([current_str,topic,value])
+        insert_to_sqlite((current_str,topic,float(value))) #加入至資料庫
 
 
 def on_connect(client, userdata, flags, reason_code, properties):
@@ -53,6 +73,7 @@ def on_message(client, userdata, msg):
         temperature_value = float(value)
         if temperature_origin_value != temperature_value:           
            temperature_origin_value = temperature_value
+           print(f'temperature:{temperature_value}')
            record(topic,temperature_value)
     
     if topic == 'SA-37/LINE_LEVEL':        
@@ -60,7 +81,6 @@ def on_message(client, userdata, msg):
         if line_origin_status != line_status:           
            line_origin_status = line_status
            record(topic,line_status)
-           print(f'光源開關{line_status}')
         
 def main():
     client = mqtt.Client(callback_api_version=mqtt.CallbackAPIVersion.VERSION2)
