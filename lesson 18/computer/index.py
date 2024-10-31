@@ -85,12 +85,16 @@ def on_message(client, userdata, msg):
 def main():
     client = mqtt.Client(callback_api_version=mqtt.CallbackAPIVersion.VERSION2)
     # 設定用戶名和密碼
-    username = "pi"  # 替換為您的用戶名
-    password = "raspberry"  # 替換為您的密碼
+    #username = "pi"  # 替換為您的用戶名
+    #password = "raspberry"  # 替換為您的密碼
+    username = "LIWEII"  # 替換為您的用戶名
+    password = "emma8991"  # 替換為您的密碼
+
     client.username_pw_set(username, password)
     client.on_connect = on_connect
     client.on_message = on_message 
-    client.connect("192.168.0.252", 1883, 60)
+    #client.connect("192.168.0.252", 1883, 60)
+    client.connect("192.168.137.208", 1883, 60)
     client.loop_forever()
 
 

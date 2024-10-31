@@ -71,9 +71,11 @@ if __name__ == '__main__':
         print('不知明的錯誤')
     else:
         #MQTT
-        SERVER = "192.168.0.252"
+        #SERVER = "192.168.0.252"
+        SERVER = "192.168.137.208"
         CLIENT_ID = binascii.hexlify(machine.unique_id())
-        mqtt = MQTTClient(CLIENT_ID, SERVER,user='pi',password='raspberry')
+        #mqtt = MQTTClient(CLIENT_ID, SERVER,user='pi',password='raspberry')
+        mqtt = MQTTClient(CLIENT_ID, SERVER,user='LIWEII',password='emma8991')
         mqtt.connect()
         t1 = Timer(period=2000, mode=Timer.PERIODIC, callback=do_thing)
         t2 = Timer(period=500, mode=Timer.PERIODIC, callback=do_thing1)
