@@ -81,7 +81,7 @@ def on_message(client, userdata, msg):
         if line_origin_status != line_status:           
            line_origin_status = line_status
            record(topic,line_status)
-        
+       
 def main():
     client = mqtt.Client(callback_api_version=mqtt.CallbackAPIVersion.VERSION2)
     # 設定用戶名和密碼
