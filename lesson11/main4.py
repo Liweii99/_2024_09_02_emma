@@ -20,7 +20,8 @@ def main():
     
 if __name__ == '__main__':
     # Default MQTT server to connect to
-    SERVER = "192.168.0.252"
+    #SERVER = "192.168.0.252"
+    SERVER = "192.168.137.208"
     CLIENT_ID = binascii.hexlify(machine.unique_id())
     TOPIC = b"SA-37/chickenHouse/溫度"
     main()
