@@ -4,7 +4,8 @@ import time
 wlan = network.WLAN(network.STA_IF)
 wlan.active(True)
 #wlan.connect('A590301', 'A590301AA')
-wlan.connect('LIWEII', 'emma8991')
+#wlan.connect('LIWEII', 'emma8991')
+wlan.connect('emmaA', 'tcpa2024')
 
 max_wait = 10
 while max_wait > 0:
