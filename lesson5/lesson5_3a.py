@@ -1,3 +1,6 @@
+from tkinter import N
+
+
 def input_data(): #0914
     while True:
         try:    
@@ -46,11 +49,12 @@ while True:
 
     print(f'身高={cm},體重={kg}')
     cm=(cm/100)*(cm/100)
-    BMI=kg/cm
+    BMI=round((kg/cm),2)
     print(f'BMI={BMI}')
     get_status(BMI) #0918 呼喚
     
     play_again = input("還要繼續嗎?(y,n)")
     if play_again == "n":
         break
+
 print('程式結束')
