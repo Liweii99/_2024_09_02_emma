@@ -1,4 +1,4 @@
-from tkinter import N
+#from tkinter import N
 
 
 def input_data(): #0914
@@ -28,7 +28,7 @@ def input_data(): #0914
             continue
     return cm,kg
 
-def get_status(bmi): #0918
+def get_status(bmi:float)->str: #0918
     if BMI >=35:
         print("重度肥胖：BMI≧35")
     elif BMI >=30:
