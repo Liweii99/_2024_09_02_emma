@@ -46,9 +46,9 @@ while True:
 
     print(f'身高={cm},體重={kg}')
     cm=(cm/100)*(cm/100)
-    BMI=round((kg/cm),2)#小數點後2位
-    print(f'BMI={BMI}')
-    get_status(BMI)
+    BMI=(kg/cm)
+    print(f'BMI={BMI:.2F}') #小數點後2位
+    get_status(BMI) 
     
     play_again = input("還要繼續嗎?(y,n)")
     if play_again == "n":
